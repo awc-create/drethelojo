@@ -1,0 +1,123 @@
+// src/styles/Global.scss
+
+/* ======================= */
+/* 🌍 GLOBAL COLOR TOKENS  */
+/* ======================= */
+:root {
+  /* Quiet luxury palette */
+  --color-bg: #f7f6f3;        /* warm white */
+  --color-surface: #e9e4dc;   /* soft beige */
+  --color-text: #121212;      /* near-black */
+  --color-muted: rgba(18, 18, 18, 0.62);
+
+  --color-olive: #6b7a5a;     /* olive accent */
+  --color-olive-soft: rgba(107, 122, 90, 0.18);
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-overlay: rgba(18, 18, 18, 0.35);
+
+  --navbar-height: 74px;
+  --max-content-width: 1200px;
+  --gutter: 5%;
+
+  /* Fonts from next/font */
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-brand: ui-serif, Georgia, "Times New Roman", serif;
+}
+
+/* ======================= */
+/* 🌐 GLOBAL RESET & BASE  */
+/* ======================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Wrapper so footer behaves */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reserve space for sticky navbar everywhere */
+main {
+  flex: 1;
+  min-height: 100dvh;
+  background: var(--color-bg);
+}
+
+/* Prevent first-child margin collapse */
+main > *:first-child {
+  margin-top: 0;
+}
+
+/* ======================= */
+/* 🌟 SCROLLBAR STYLING    */
+/* ======================= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(18, 18, 18, 0.25);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(107, 122, 90, 0.55);
+}
+
+/* ======================= */
+/* 🖼️ OPTIONAL WATERMARK    */
+/* ======================= */
+/* If you want the hero texture instead of a logo watermark,
+   we can swap this later for a subtle abstract texture. */
+.background-wrapper {
+  position: fixed;
+  inset: 0;
+  background: url("/assets/logo/logo-full.png") no-repeat center/500px;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ======================= */
+/* 📦 CONTAINER            */
+/* ======================= */
+.container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ======================= */
+/* ✨ ANIMATIONS           */
+/* ======================= */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

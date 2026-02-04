@@ -1,0 +1,13 @@
+project_type: node
+slug: drethelojo
+port: 3000
+
+domains:
+  prod: drethelojo.com
+
+deploy_targets:
+  main-hetz: hetzner
+  dev: vercel
+  preview: vercel
+
+db: none

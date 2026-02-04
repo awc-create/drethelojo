@@ -1,0 +1,14 @@
+/* src/app/page.module.scss */
+.home {
+  width: 100%;
+}
+
+.sectionHero {
+  /* Hero should feel “editorial” and spacious */
+  padding: clamp(28px, 4vw, 56px) 0;
+}
+
+.sectionDivider {
+  padding: clamp(56px, 7vw, 96px) 0;
+  border-top: 1px solid var(--color-border);
+}

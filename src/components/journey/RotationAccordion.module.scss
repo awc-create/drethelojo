@@ -1,0 +1,91 @@
+.details {
+  margin-top: 12px;
+  border-radius: 16px;
+  background: rgba(247, 246, 243, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    background: rgba(233, 228, 220, 0.35);
+  }
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summaryText {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.62);
+}
+
+.chev {
+  color: rgba(107, 122, 90, 0.78);
+  transition: transform 0.2s ease;
+}
+
+.details[open] .chev {
+  transform: rotate(180deg);
+}
+
+.body {
+  padding: 12px 12px 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.block {
+  padding-top: 10px;
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.blockTitle {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.55);
+  margin-bottom: 8px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+
+  li {
+    color: rgba(18, 18, 18, 0.62);
+    line-height: 1.6;
+  }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  font-size: 0.74rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(233, 228, 220, 0.35);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(18, 18, 18, 0.68);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

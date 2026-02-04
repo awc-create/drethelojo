@@ -1,0 +1,429 @@
+/* src/components/home/journey/Journey.module.scss */
+
+.section {
+  padding: clamp(56px, 7vw, 96px) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  max-width: 780px;
+  margin-bottom: clamp(22px, 3vw, 36px);
+}
+
+.kicker {
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(107, 122, 90, 0.78);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-brand);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  line-height: 1.15;
+  margin-bottom: 10px;
+  color: rgba(18, 18, 18, 0.92);
+}
+
+.lead {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(18, 18, 18, 0.62);
+  max-width: 74ch;
+}
+
+/* ================= TABS ================= */
+
+.tabs {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(233, 228, 220, 0.35);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  margin-bottom: clamp(16px, 2vw, 22px);
+}
+
+.tab {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.68);
+
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab:hover {
+  background: rgba(247, 246, 243, 0.65);
+}
+
+.tabActive {
+  background: rgba(247, 246, 243, 0.85);
+  border: 1px solid rgba(107, 122, 90, 0.20);
+  color: rgba(18, 18, 18, 0.86);
+}
+
+/* ================= GRID ================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(18px, 3vw, 40px);
+  align-items: start;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ================= CURRENT ROTATION CARD ================= */
+
+.nowCard {
+  border-radius: 22px;
+  background: rgba(247, 246, 243, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+}
+
+.nowTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+  }
+}
+
+.nowLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.55);
+  margin-bottom: 6px;
+}
+
+.nowTitle {
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: rgba(18, 18, 18, 0.88);
+  margin-bottom: 6px;
+}
+
+.nowRange {
+  font-size: 0.95rem;
+  color: rgba(18, 18, 18, 0.62);
+}
+
+.progressPill {
+  border-radius: 999px;
+  padding: 10px 12px;
+  background: rgba(233, 228, 220, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  min-width: 80px;
+  text-align: center;
+}
+
+.progressText {
+  font-family: var(--font-brand);
+  font-weight: 600;
+  color: rgba(18, 18, 18, 0.86);
+}
+
+.progressBar {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(233, 228, 220, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 999px;
+  background: rgba(107, 122, 90, 0.92);
+  transition: width 0.35s ease;
+}
+
+.nextRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.nextLabel {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.55);
+}
+
+.nextValue {
+  font-size: 0.95rem;
+  color: rgba(18, 18, 18, 0.68);
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline {
+  position: relative;
+  padding-left: 22px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: rgba(107, 122, 90, 0.35);
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  column-gap: 14px;
+  padding: 12px 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(107, 122, 90, 0.55);
+  box-shadow: 0 0 0 6px rgba(107, 122, 90, 0.10);
+  margin-top: 4px;
+}
+
+.content {
+  padding: 14px 14px;
+  border-radius: 18px;
+  background: rgba(233, 228, 220, 0.30);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.range {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.55);
+}
+
+.badge {
+  font-size: 0.78rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(247, 246, 243, 0.75);
+  border: 1px solid rgba(107, 122, 90, 0.28);
+  color: rgba(107, 122, 90, 0.9);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.tag {
+  font-size: 0.78rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(247, 246, 243, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(107, 122, 90, 0.78);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.itemTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(18, 18, 18, 0.88);
+  margin-bottom: 6px;
+}
+
+.itemDetail {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(18, 18, 18, 0.62);
+}
+
+/* states */
+.itemCurrent .dot {
+  background: rgba(107, 122, 90, 0.95);
+  box-shadow: 0 0 0 7px rgba(107, 122, 90, 0.18);
+}
+
+.itemCurrent .content {
+  background: rgba(233, 228, 220, 0.45);
+  border: 1px solid rgba(107, 122, 90, 0.18);
+}
+
+.itemPast {
+  opacity: 0.85;
+}
+
+/* ================= SIDE CARD ================= */
+
+.sideCard {
+  position: sticky;
+  top: calc(var(--navbar-height) + 18px);
+  border-radius: 22px;
+  background: rgba(247, 246, 243, 0.80);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.08);
+  padding: 18px;
+
+  @media (max-width: 960px) {
+    position: relative;
+    top: auto;
+  }
+}
+
+.sideKicker {
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(107, 122, 90, 0.78);
+  margin-bottom: 12px;
+}
+
+.sideBlock {
+  padding: 12px 12px;
+  border-radius: 16px;
+  background: rgba(233, 228, 220, 0.30);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  margin-bottom: 10px;
+}
+
+.sideLabel {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.55);
+  margin-bottom: 6px;
+}
+
+.sideText {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(18, 18, 18, 0.65);
+}
+
+.sideActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.sideBtn {
+  text-decoration: none;
+  background: var(--color-olive, #6b7a5a);
+  color: #f7f6f3;
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+  }
+}
+
+.sideLink {
+  text-decoration: none;
+  color: rgba(18, 18, 18, 0.75);
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(247, 246, 243, 0.70);
+
+  &:hover {
+    background: rgba(233, 228, 220, 0.55);
+  }
+}
+
+/* ================= STATS ROW (restored) ================= */
+
+.stats {
+  margin-top: clamp(22px, 3vw, 34px);
+  padding-top: 22px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+
+  @media (max-width: 980px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat {
+  border-radius: 18px;
+  padding: 18px 16px;
+  background: rgba(247, 246, 243, 0.80);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+}
+
+.statNum {
+  display: block;
+  font-family: var(--font-brand);
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: rgba(18, 18, 18, 0.90);
+  margin-bottom: 6px;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.55);
+}

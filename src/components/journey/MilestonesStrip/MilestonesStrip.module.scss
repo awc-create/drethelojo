@@ -1,0 +1,56 @@
+.strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border-radius: 18px;
+  padding: 14px 14px;
+
+  background: rgba(247, 246, 243, 0.78);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+
+  display: grid;
+  gap: 6px;
+}
+
+.cardOlive {
+  border: 1px solid rgba(107, 122, 90, 0.20);
+  background: rgba(233, 228, 220, 0.45);
+}
+
+.label {
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.55);
+}
+
+.value {
+  font-family: var(--font-brand);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: rgba(18, 18, 18, 0.90);
+  line-height: 1.2;
+}
+
+.detail {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(18, 18, 18, 0.62);
+}

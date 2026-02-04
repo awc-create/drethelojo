@@ -1,0 +1,89 @@
+/* src/app/research/page.module.scss */
+
+.page {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  padding-top: calc(var(--navbar-height) + clamp(24px, 4vw, 48px));
+  padding-bottom: clamp(56px, 7vw, 96px);
+}
+
+.hero {
+  border-radius: 28px;
+  background: rgba(247, 246, 243, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.10);
+  padding: clamp(18px, 3vw, 34px);
+  margin-bottom: 18px;
+}
+
+.kicker {
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(107, 122, 90, 0.78);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-brand);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.12;
+  margin-bottom: 10px;
+  color: rgba(18, 18, 18, 0.92);
+}
+
+.lead {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(18, 18, 18, 0.62);
+  max-width: 80ch;
+}
+
+.metaRow {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.metaPill {
+  border-radius: 999px;
+  padding: 10px 12px;
+  background: rgba(233, 228, 220, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(18, 18, 18, 0.78);
+
+  strong {
+    color: rgba(18, 18, 18, 0.92);
+    font-weight: 650;
+  }
+}
+
+.metaHint {
+  color: rgba(18, 18, 18, 0.58);
+  font-size: 0.95rem;
+}
+
+.featured {
+  margin-bottom: 14px;
+}
+
+.inProgress {
+  margin-bottom: 14px;
+}
+
+.controls {
+  margin-bottom: 10px;
+}
+
+.yearJump {
+  margin-bottom: 10px;
+}
+
+.results {
+  margin-top: 6px;
+}

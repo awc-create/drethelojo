@@ -1,0 +1,20 @@
+.page {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+
+  padding-top: calc(var(--navbar-height) + clamp(24px, 4vw, 48px));
+  padding-bottom: clamp(56px, 7vw, 96px);
+}
+
+.grid {
+  margin-top: clamp(18px, 3vw, 28px);
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: clamp(16px, 3vw, 34px);
+  align-items: start;
+
+  @media (max-width: 980px) {
+    grid-template-columns: 1fr;
+  }
+}

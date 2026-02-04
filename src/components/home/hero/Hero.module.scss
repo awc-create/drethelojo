@@ -1,0 +1,273 @@
+/* src/components/home/hero/Hero.module.scss */
+
+.hero {
+  /* Page background already warm; this just adds breathing room */
+  width: 100%;
+  padding: clamp(22px, 4vw, 52px) 0;
+}
+
+.shell {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* The “panel” like your mock */
+.card {
+  position: relative;
+  border-radius: 28px;
+  background: rgba(247, 246, 243, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.10);
+  overflow: hidden;
+}
+
+/* soft vignette inside the card */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(233, 228, 220, 0.65), transparent 60%),
+    radial-gradient(circle at 75% 50%, rgba(233, 228, 220, 0.45), transparent 55%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(18px, 3vw, 40px);
+  padding: clamp(22px, 4vw, 46px);
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 18px;
+  }
+}
+
+/* LEFT */
+.copy {
+  max-width: 720px;
+}
+
+.kicker {
+  font-size: 0.84rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(107, 122, 90, 0.78);
+  margin-bottom: 18px;
+
+  @media (max-width: 900px) {
+    margin-bottom: 14px;
+  }
+}
+
+.name {
+  font-family: var(--font-brand);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: clamp(2.2rem, 4vw, 3.9rem);
+  line-height: 1.05;
+  color: rgba(18, 18, 18, 0.92);
+  margin-bottom: 16px;
+}
+
+.headline {
+  font-size: clamp(1.08rem, 1.6vw, 1.32rem);
+  line-height: 1.55;
+  color: rgba(18, 18, 18, 0.86);
+  margin-bottom: 14px;
+  max-width: 64ch;
+  font-style: italic; /* matches the “academic-luxury” vibe */
+}
+
+.sub {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(18, 18, 18, 0.62);
+  margin-bottom: 26px;
+  max-width: 72ch;
+
+  @media (max-width: 900px) {
+    margin-bottom: 18px;
+  }
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  background: var(--color-olive);
+  color: #f7f6f3;
+
+  border-radius: 12px;
+  padding: 12px 18px;
+  min-width: 170px;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
+
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+  }
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  background: rgba(247, 246, 243, 0.75);
+  color: rgba(18, 18, 18, 0.78);
+
+  border-radius: 12px;
+  padding: 12px 18px;
+  min-width: 190px;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  transition: transform 0.15s ease, background 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    background: rgba(233, 228, 220, 0.55);
+  }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.chip {
+  font-size: 0.86rem;
+  padding: 7px 12px;
+  border-radius: 999px;
+
+  background: rgba(233, 228, 220, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: rgba(18, 18, 18, 0.70);
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* RIGHT */
+.visual {
+  position: relative;
+  min-height: 420px;
+
+  @media (max-width: 900px) {
+    min-height: 330px;
+  }
+}
+
+/* Subtle “skin/topo” texture behind portrait (C in your A+C request) */
+.visual::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 28px;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 30% 30%, rgba(107, 122, 90, 0.14), transparent 55%),
+    radial-gradient(circle at 75% 55%, rgba(233, 228, 220, 0.95), transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(18, 18, 18, 0.035) 0px,
+      rgba(18, 18, 18, 0.035) 1px,
+      transparent 1px,
+      transparent 16px
+    );
+  opacity: 0.38;
+}
+
+/* the portrait frame */
+.portraitFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+
+  background: rgba(233, 228, 220, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 900px) {
+    aspect-ratio: 16 / 12;
+  }
+}
+
+/* luxury blend overlay to pull the photo into the palette */
+.portraitFrame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(247, 246, 243, 0.00) 0%,
+    rgba(247, 246, 243, 0.10) 55%,
+    rgba(247, 246, 243, 0.22) 100%
+  );
+}
+
+.portrait {
+  object-fit: cover;
+
+  /* IMPORTANT: keep her in frame (tweak these values if needed) */
+  object-position: 70% 35%;
+
+  filter: saturate(0.98) contrast(1.02);
+}
+
+/* tiny lines above the portrait area like in the mock */
+.topLines {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 70%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.14);
+  opacity: 0.25;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 85%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.14);
+    opacity: 0.25;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}

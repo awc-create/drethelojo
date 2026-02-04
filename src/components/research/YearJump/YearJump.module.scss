@@ -1,0 +1,37 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  border-radius: 999px;
+  padding: 10px 12px;
+  background: rgba(247, 246, 243, 0.78);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+}
+
+.label {
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.55);
+}
+
+.pill {
+  border: 1px solid rgba(107, 122, 90, 0.22);
+  background: rgba(233, 228, 220, 0.35);
+  color: rgba(18, 18, 18, 0.78);
+
+  border-radius: 999px;
+  padding: 8px 10px;
+  cursor: pointer;
+
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  &:hover {
+    background: rgba(233, 228, 220, 0.55);
+  }
+}

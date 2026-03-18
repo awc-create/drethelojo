@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      user-scalable=no: prevents accidental pinch-zoom fighting Phaser's own scaling
+      viewport-fit=cover: fills iPhone notch/safe-area
+      minimum/maximum-scale=1: locks zoom on iOS even without user-scalable (belt+braces)
+    -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,
+                   user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Derm Escape Lab — interactive dermatology escape room training game." />
+    <meta property="og:title" content="Derm Escape Lab" />
+    <meta property="og:description" content="Diagnose, treat, and escape the clinic!" />
+    <meta property="og:type" content="website" />
+    <title>Derm Escape Lab</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html {
+        /* Use dvh (dynamic viewport height) where supported to handle
+           iOS Safari's collapsing address bar without layout jump.
+           Falls back to 100% on older browsers. */
+        height: 100%;
+        height: -webkit-fill-available;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: #050816;
+        overflow: hidden;
+        /* Match html height on iOS */
+        min-height: 100%;
+        min-height: -webkit-fill-available;
+        /* Prevent iOS rubber-band scroll fighting Phaser */
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: auto;
+        touch-action: none;
+      }
+
+      #game {
+        position: fixed;
+        inset: 0;
+        /* respect notch/safe-area on iPhone X+ */
+        padding: env(safe-area-inset-top) env(safe-area-inset-right)
+                 env(safe-area-inset-bottom) env(safe-area-inset-left);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #050816;
+      }
+
+      #game canvas {
+        display: block;
+        /* CRITICAL: prevent browser from intercepting touch events on canvas */
+        touch-action: none;
+        /* Prevent callout/selection on long-press (iOS) */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      /* Boot screen */
+      #boot-screen {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #050816;
+        color: #fff;
+        z-index: 9999;
+        gap: 16px;
+        transition: opacity 0.4s;
+      }
+      #boot-screen.hidden { opacity: 0; pointer-events: none; }
+      #boot-screen h1 { font-size: 2rem; font-weight: 700; margin: 0; }
+      #boot-screen p  { margin: 0; color: #94a3b8; font-size: 0.95rem; }
+      .spinner {
+        width: 36px; height: 36px;
+        border: 3px solid #1e293b;
+        border-top-color: #38bdf8;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+    <script type="module" crossorigin src="/game/assets/index-BLHs9wGw.js"></script>
+    <link rel="modulepreload" crossorigin href="/game/assets/phaser-DFK5Ua9d.js">
+    <link rel="stylesheet" crossorigin href="/game/assets/index-DBCLkXW9.css">
+  </head>
+  <body>
+    <div id="boot-screen">
+      <h1>Derm Escape Lab</h1>
+      <p>Loading game assets…</p>
+      <div class="spinner"></div>
+    </div>
+    <div id="game"></div>
+    <script>
+      // Prevent context menu on long-press (Android)
+      document.addEventListener('contextmenu', e => e.preventDefault());
+
+      // Hide the boot screen once Phaser renders its canvas
+      const observer = new MutationObserver(() => {
+        if (document.querySelector('#game canvas')) {
+          document.getElementById('boot-screen')?.classList.add('hidden');
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.getElementById('game'), { childList: true });
+    </script>
+  </body>
+</html>

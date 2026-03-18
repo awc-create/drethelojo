@@ -1,0 +1,286 @@
+// app/projects/escape-room/page.module.scss
+
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+
+  @media (max-width: 640px) {
+    padding: 1.5rem 1rem 4rem;
+  }
+}
+
+// ── Breadcrumb ───────────────────────────────────────────────────
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary, #888);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin-bottom: 1.5rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+// ── Page header ──────────────────────────────────────────────────
+
+.pageHeader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 1.75rem;
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.title {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.5rem;
+}
+
+.lead {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary, #555);
+  line-height: 1.65;
+  max-width: 52ch;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+}
+
+.metaBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+
+  @media (max-width: 560px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.badgeActive {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #edf5ea;
+  color: #2d5c25;
+  border: 1px solid #b8d9b0;
+}
+
+.metaTags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.metaTag {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary, #888);
+  background: var(--color-background-secondary, #f5f5f0);
+  border: 0.5px solid var(--color-border-tertiary, rgba(0, 0, 0, 0.1));
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+// ── Game section ─────────────────────────────────────────────────
+
+.gameSection {
+  margin-bottom: 1.75rem;
+}
+
+.gameFrameOuter {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #060f1e;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px solid var(--color-border-secondary, rgba(0, 0, 0, 0.18));
+}
+
+.gameFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+// ── Controls row ─────────────────────────────────────────────────
+
+.controlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+  padding: 0 0.1rem;
+}
+
+.controlsMeta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.controlsMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #888);
+  font-family: system-ui, -apple-system, sans-serif;
+
+  svg {
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+}
+
+.openBtn {
+  font-size: 0.72rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  color: var(--color-text-secondary, #666);
+  background: var(--color-background-primary, #fff);
+  border: 0.5px solid var(--color-border-secondary, rgba(0, 0, 0, 0.2));
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  text-decoration: none;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+
+  &:hover {
+    background: var(--color-background-secondary, #f5f5f0);
+    border-color: var(--color-border-primary, rgba(0, 0, 0, 0.3));
+    color: var(--color-text-primary, #333);
+  }
+}
+
+// ── Divider ──────────────────────────────────────────────────────
+
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--color-border-tertiary, rgba(0, 0, 0, 0.1));
+  margin: 2rem 0;
+}
+
+// ── Info grid ────────────────────────────────────────────────────
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.infoLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary, #888);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0 0 0.6rem;
+}
+
+.howList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.85rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--color-text-secondary, #444);
+    line-height: 1.55;
+  }
+}
+
+.howNum {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-background-secondary, #f0f0eb);
+  border: 0.5px solid var(--color-border-secondary, rgba(0, 0, 0, 0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--color-text-secondary, #666);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.stackTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.stackTag {
+  font-size: 0.72rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--color-text-secondary, #555);
+  background: var(--color-background-secondary, #f0f0eb);
+  border: 0.5px solid var(--color-border-tertiary, rgba(0, 0, 0, 0.1));
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4a6741;
+  flex-shrink: 0;
+}
+
+.statusText {
+  font-size: 0.8rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--color-text-secondary, #555);
+  line-height: 1.5;
+}

@@ -1,3 +1,4 @@
+// src/app/coming-soon/page.tsx
 import { Suspense } from 'react';
 import ComingSoonClient from './ComingSoonClient';
 

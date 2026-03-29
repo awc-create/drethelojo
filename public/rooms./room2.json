@@ -1,0 +1,31 @@
+{
+  "id": "room2",
+  "title": "Room 2 — The Lab",
+  "background": "",
+  "hotspots": [
+    {
+      "id": "slides",
+      "label": "PAS Slides",
+      "x": 260, "y": 180, "w": 180, "h": 120,
+      "action": {
+        "type": "dialog",
+        "text": "PAS-positive hyphae branching at 45°. Pattern index looks like '2-1-3-4'…"
+      }
+    },
+    {
+      "id": "derm_scope",
+      "label": "Dermatoscope",
+      "x": 520, "y": 180, "w": 160, "h": 120,
+      "action": {
+        "type": "dialog",
+        "text": "Pigment network + dotted vessels. Combine with slides to derive the code."
+      }
+    },
+    {
+      "id": "fridge",
+      "label": "Locked Fridge",
+      "x": 680, "y": 120, "w": 120, "h": 220,
+      "action": { "type": "keypad", "code": "2134", "to": "room3" }
+    }
+  ]
+}

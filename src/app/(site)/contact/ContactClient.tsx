@@ -3,7 +3,7 @@
 import styles from './Contact.module.scss';
 import dynamic from 'next/dynamic';
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
-import mailAnim from '../../assets/lottie/mail.json'; // adjust path if needed
+import mailAnim from '@/assets/lottie/mail.json'; // adjust path if needed
 
 export default function ContactClient() {
   return (

@@ -3,7 +3,7 @@
 import styles from './About.module.scss';
 import dynamic from 'next/dynamic';
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
-import developerAnim from '../../assets/lottie/developer.json'; // adjust path if needed
+import developerAnim from '@/assets/lottie/developer.json'; // adjust path if needed
 
 export default function AboutClient() {
   return (

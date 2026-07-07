@@ -25,7 +25,6 @@
           "name": "Jordan K.",
           "age": 34,
           "gender": "Female",
-          "photo": "/rooms/patient1.png",
           "symptoms": [
             "Scaly plaques on elbows and knees",
             "Mild pruritus"

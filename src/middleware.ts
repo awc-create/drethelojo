@@ -20,6 +20,22 @@ function isPublicAsset(pathname: string) {
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+  const host = req.headers.get('host') || '';
+
+  // recipes.drethelojo.com serves the Solene Kitchen app
+  if (host.startsWith('recipes.')) {
+    if (!pathname.startsWith('/recipes') && !isPublicAsset(pathname)) {
+      const url = req.nextUrl.clone();
+      url.pathname = '/recipes';
+      return NextResponse.rewrite(url);
+    }
+    return NextResponse.next();
+  }
+
+  // Solene Kitchen is public (not behind the coming-soon gate)
+  if (pathname.startsWith('/recipes')) {
+    return NextResponse.next();
+  }
 
   if (PUBLIC_PATHS.has(pathname) || isPublicAsset(pathname)) {
     return NextResponse.next();

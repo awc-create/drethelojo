@@ -2,10 +2,11 @@
   "id": "room1",
   "title": "Room 1 — Dermatology Clinic",
   "background": "/rooms/room1-clinic.webp",
+  "_codeNote": "Keypad code 1840 = lesion(1) + patient(8) + riddle(4) + cabinet(0). Must stay in sync with QUIZ_DIGITS/CODE_ORDER in src/state/GameState.ts.",
   "hotspots": [
     {
       "id": "keypad",
-      "label": "Keypad",
+      "label": "Door keypad",
       "x": 1105,
       "y": 171,
       "w": 74,
@@ -14,11 +15,11 @@
     },
     {
       "id": "patient_chart",
-      "label": "Patient Chart",
+      "label": "Patient chart",
       "x": 641,
       "y": 400,
       "w": 112,
-      "h": 53,
+      "h": 48,
       "action": {
         "type": "patient",
         "patient": {
@@ -26,8 +27,9 @@
           "age": 34,
           "gender": "Female",
           "symptoms": [
-            "Scaly plaques on elbows and knees",
-            "Mild pruritus"
+            "Scaly plaques on the extensor elbows and knees",
+            "Mild pruritus",
+            "Fine pitting of several fingernails"
           ],
           "onset": "Gradual",
           "duration": "6 months",
@@ -38,25 +40,25 @@
             "rr": "14",
             "spo2": "99%"
           },
-          "notes": "Family history of psoriasis. No systemic symptoms."
+          "notes": "Family history of psoriasis in mother and maternal uncle. No systemic symptoms, no joint pain. Has tried an over-the-counter emollient with partial relief."
         }
       }
     },
     {
       "id": "lesion_photo",
-      "label": "Lesion Photo",
+      "label": "Framed lesion photo",
       "x": 441,
       "y": 72,
       "w": 194,
       "h": 178,
       "action": {
         "type": "inspect",
-        "text": "A close-up of an erythematous plaque with silvery scale…"
+        "text": "A teaching frame of close-up clinical photographs."
       }
     },
     {
       "id": "hidden_key",
-      "label": "Check under trolley",
+      "label": "Check under the trolley",
       "x": 637,
       "y": 451,
       "w": 48,
@@ -69,35 +71,26 @@
     },
     {
       "id": "cabinet",
-      "label": "Wall cabinet",
+      "label": "Wall medicine cabinet",
       "x": 143,
       "y": 223,
       "w": 157,
       "h": 200,
       "action": {
         "type": "cabinet_puzzle",
-        "title": "Drug cupboard",
-        "question": "Jordan presents with chronic erythematous scaly plaques on elbows and knees. What is the most appropriate first-line treatment?",
-        "choices": [
-          "Mild potency topical steroid",
-          "High potency topical steroid",
-          "Oral antibiotic",
-          "Oral antifungal"
-        ],
-        "correctIdx": 0,
-        "rewardDigit": "1"
+        "title": "Drug cupboard"
       }
     },
     {
       "id": "medical_riddle",
-      "label": "Medical Riddle",
+      "label": "Riddle noticeboard",
       "x": 370,
       "y": 279,
       "w": 82,
       "h": 71,
       "action": {
         "type": "riddle_quiz",
-        "title": "Medical Riddle – Clinic cases"
+        "title": "Medical Riddles — Clinic Cases"
       }
     }
   ]
